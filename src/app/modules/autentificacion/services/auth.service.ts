@@ -10,20 +10,20 @@ export class AuthService {
   //referenciar Auth de Firebase en el servicio
   constructor(public auth: AngularFireAuth) { }
   //función para registro
-  registrar(email: string, password: string){
+  registrar(email: string, password: string) {
     //retorna el valor que es creado con el método "createUserWithEmailAndPassword"
-    return this.auth.createUserWithEmailAndPassword(email,password)
+    return this.auth.createUserWithEmailAndPassword(email, password)
   }
   //función para inicio de sesión
-  iniciarSesion(email:string, password:string){
+  iniciarSesion(email: string, password: string) {
     //validar la información del usuario -> saber si existe en la colección
-    return this.auth.signInWithEmailAndPassword(email,password)
+    return this.auth.signInWithEmailAndPassword(email, password)
   }
 
   //función para cerrar de sesión
-  cerrarSesion(){
+  cerrarSesion() {
     //devuelve una promesa vacía -> quita token
     return this.auth.signOut();
   }
-  ////función para tomar el UID
+  //función para tomar el UID
 }

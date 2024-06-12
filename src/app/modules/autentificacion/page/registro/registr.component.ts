@@ -27,7 +27,8 @@ export class RegistrComponent {
   coleccionUsuarios: Usuario[] = [];
   //fin de importaciones
 
-  constructor(public servicioAuth: AuthService,
+  constructor(
+    public servicioAuth: AuthService,
     public servicioRutas: Router
   ) { }
 
@@ -44,22 +45,23 @@ export class RegistrComponent {
       Rol: this.usuarios.Rol,
       Password: this.usuarios.Password,*/
 
-      //registro con servicio de Auth
-      const credenciales = { 
-        Email: this.usuarios.Email,
-        Password: this.usuarios.Password
+    //registro con servicio de Auth
+    const credenciales = {
+      Email: this.usuarios.Email,
+      Password: this.usuarios.Password
     };
 
     const res = await this.servicioAuth.registrar(credenciales.Email, credenciales.Password).
-    //el método "then" es una promesa que devuelve el mismo valor si todo sale bien
-    then(res=>{
-      alert("HA SIDO REGISTRADO CON ÉXITO");
-      //el método navigate nos direcciona a otra vista
-      this.servicioRutas.navigate(['/inicio']);
-    })
-    //el método catch captura una falla y la vuelve un error cuando la promesa sale mal
-    .catch(error=>{alert("OCURRIÓ UN ERROR AL REGISTRAR EL USUARIO \n"+error);
-    });
+      //el método "then" es una promesa que devuelve el mismo valor si todo sale bien
+      then(res => {
+        alert("HA SIDO REGISTRADO CON ÉXITO");
+        //el método navigate nos direcciona a otra vista
+        this.servicioRutas.navigate(['/inicio']);
+      })
+      //el método catch captura una falla y la vuelve un error cuando la promesa sale mal
+      .catch(error => {
+        alert("OCURRIÓ UN ERROR AL REGISTRAR EL USUARIO \n" + error);
+      });
 
     /*
     //enviamos la nueva información como un nuevo objeto a la colección de usuarios

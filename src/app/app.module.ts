@@ -36,7 +36,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';*/
 
     //componentes globales
     SharedModule,
-      
+
     //vinculación con firebase
     AngularFireModule.initializeApp(environmet.firebaseConfig), //inicializa firebase dentro del proyecto
     AngularFireAuthModule,
