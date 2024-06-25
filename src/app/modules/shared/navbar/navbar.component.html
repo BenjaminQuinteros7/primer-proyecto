@@ -1,0 +1,12 @@
+<mat-toolbar>
+    <span>My app</span>
+
+    <span class="example-spacer"></span>
+
+    <!--botones con iconos-->
+    <button mat-icon-button [matMenuTriggerFor]="usuario"> <mat-icon>account_circle</mat-icon></button>
+    <mat-menu #usuario="matMenu">
+        <button mat-menu-item routerLink="/registro">Registrarse</button>
+        <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
+    </mat-menu>
+</mat-toolbar>
