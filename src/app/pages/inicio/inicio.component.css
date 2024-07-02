@@ -6,17 +6,29 @@ footer {
     background-color: peru
 }
 
-/*este media corresponde a pantallas mas pequeñas. Ejemplo: celulares.*/
+/*este corresponde a pantallas más chicas. Ejemplo: celulares.*/
 @media (min-width: 300px) and (max-width: 700px) {
-    .header {
+    header {
         background-color: rgb(240, 227, 45);
-    }
+    };
+    body {
+        background-color: darkolivegreen;
+    };
+    footer {
+        background-color: peru
+    };
 };
 
 
-/*esto es para pantallas mas grandes. Ejemplo: computadoras, tablets*/
+/*este es para pantallas más grandes. Ejemplo: computadoras, tablets*/
 @media (min-width: 700px) {
-    .header {
+    header {
         background-color: rgb(12, 142, 194);
-    }
-}
+    };
+    body {
+        background-color: darkolivegreen;
+    };
+    footer {
+        background-color: peru
+    };
+};
