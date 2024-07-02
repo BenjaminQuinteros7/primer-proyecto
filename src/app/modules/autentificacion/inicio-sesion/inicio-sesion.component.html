@@ -16,12 +16,12 @@
         <div class="example-container">
             <mat-form-field>
                 <mat-label>Ingrese su contraseña</mat-label>
-                <input [(ngModel)]="usuarios.Password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
+                <input [(ngModel)]="usuarios.Password" matInput [type]="hide ? 'password' : 'text'" #input minlength="8" required>
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
-                <mat-hint aling="start">Mínimo: 6 carácteres/{{input.value.length}} carácteres</mat-hint>
+                <mat-hint aling="start">Mínimo: 8 carácteres/{{input.value.length}} carácteres</mat-hint>
             </mat-form-field>
 
             <!--Botón para enviar la información a la base de datos-->

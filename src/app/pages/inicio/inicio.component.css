@@ -1,0 +1,22 @@
+body {
+    background-color: darkolivegreen;
+}
+
+footer {
+    background-color: peru
+}
+
+/*este media corresponde a pantallas mas pequeñas. Ejemplo: celulares.*/
+@media (min-width: 300px) and (max-width: 700px) {
+    .header {
+        background-color: rgb(240, 227, 45);
+    }
+};
+
+
+/*esto es para pantallas mas grandes. Ejemplo: computadoras, tablets*/
+@media (min-width: 700px) {
+    .header {
+        background-color: rgb(12, 142, 194);
+    }
+}

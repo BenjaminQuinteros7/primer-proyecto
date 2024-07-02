@@ -1,4 +1,3 @@
-/*
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 @Component({
@@ -94,7 +93,7 @@ export class InicioSesionComponent {
   };
   //función para vaciar los inputs del formulario
   limpiarinputs() {
-    /* en constante "inputs" llamamos a los atributos y los inicializamos como vacíos *//*
+    //en constante "inputs" llamamos a los atributos y los inicializamos como vacíos *//*
     const inputs = {
       Uid: this.usuarios.Uid = '', // Usamos comillas simples porque es STRING
       Nombre: this.usuarios.Nombre = '',
@@ -105,4 +104,3 @@ export class InicioSesionComponent {
     };
   };
 };
-*/

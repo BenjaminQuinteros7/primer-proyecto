@@ -9,6 +9,9 @@ const routes: Routes = [
   {
     path:"",loadChildren:()=>import('./modules/inicio/inicio.module').then(m=>m.InicioModule)
   },
+    {
+      path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule)
+    }
 ];
 
 @NgModule({
