@@ -1,3 +1,6 @@
+header {
+    background-color: rgb(240, 227, 45); 
+}
 body {
     background-color: darkolivegreen;
 }
@@ -6,17 +9,24 @@ footer {
     background-color: peru
 }
 
+
 /*este corresponde a pantallas más chicas. Ejemplo: celulares.*/
 @media (min-width: 300px) and (max-width: 700px) {
     header {
         background-color: rgb(240, 227, 45);
-    };
+    }
     body {
         background-color: darkolivegreen;
-    };
+    }
     footer {
-        background-color: peru
-    };
+        background-color: peru;
+    }
+  #nav{
+  display:none;
+  }
+    #cards{
+  display:none;
+  }
 };
 
 
@@ -24,11 +34,17 @@ footer {
 @media (min-width: 700px) {
     header {
         background-color: rgb(12, 142, 194);
-    };
+    }
     body {
         background-color: darkolivegreen;
-    };
+    }
     footer {
-        background-color: peru
-    };
+        background-color: peru;
+    }
+  #nav{
+    display: none;
+}
+      #cards{
+  display:none;
+  }
 };
