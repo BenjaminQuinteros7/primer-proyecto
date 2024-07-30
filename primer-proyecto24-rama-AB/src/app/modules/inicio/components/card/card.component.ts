@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // IMPORTAMOS INTERFAZ
-import { Animal } from 'src/app/models/animal';
+import { Animal } from 'src/app/models/indumentaria';
 
 @Component({
   selector: 'app-card',

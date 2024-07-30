@@ -1,8 +1,7 @@
-export interface Animal {
+export interface indumentaria {
     id: string;
     nombre: string;
-    raza: string;
-    edad: number;
+    precio: number;
     imagen: string;
     alt: string;
 }

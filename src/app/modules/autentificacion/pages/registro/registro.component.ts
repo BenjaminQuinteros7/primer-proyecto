@@ -8,6 +8,8 @@ import { FirestoreService } from 'src/app/modules/shared/services/firestore.serv
 import { Router } from '@angular/router';
 // componente de encriptación
 import * as CryptoJS from 'crypto-js';
+// paquetería de alertas personalizadas
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -59,14 +61,22 @@ export class RegistroComponent {
     const res = await this.servicioAuth.registrar(credenciales.email, credenciales.password)
     // el método THEN es una promesa que devuelve el mismo valor si todo sale bien
     .then(res => {
-      alert("¡Se pudo registrar con éxito! :)");
+      Swal.fire({
+        title: "¡Buen trabajo!",
+        text: "¡Se pudo registrar con éxito! :)",
+        icon: "success"
+      });
 
       // el método NAVIGATE nos redirecciona a otra vista
       this.servicioRutas.navigate(['/inicio']);
     })
     // el método CATCH captura una falla y la vuelve un error cuando la promesa salga mal
     .catch(error => {
-      alert("Hubo un error al registrar un nuevo usuario :( \n"+error);
+      Swal.fire({
+        title: "¡Oh no!",
+        text: "Hubo un error al registrar un nuevo usuario :( \n"+error,
+        icon: "error"
+      });
     })
 
     // Constante UID captura el identificado de la BD
@@ -88,7 +98,7 @@ export class RegistroComponent {
     // Llamamos a la función limpiarInputs() para ejecutarla
     this.limpiarInputs();
 
-    // ########################## LOCAL
+    /* ########################## LOCAL
     // Enviamos la nueva información como un NUEVO OBJETO a la colección de usuarios
     // this.coleccionUsuarios.push(credenciales)
 
@@ -98,7 +108,7 @@ export class RegistroComponent {
     // Mostramos credenciales por consola
     // console.log(credenciales);
     // console.log(this.coleccionUsuarios);
-    // ########################### FIN LOCAL
+    // ########################### FIN LOCAL*/
   }
 
   /* Función que accede a servicio FIRESTORE y envía la información 
