@@ -16,22 +16,22 @@ export class CardComponent {
        {
          id: "",
          nombre: "Camiseta Argentina",
-         precio: 5,
-         imagen: "https://i1.sndcdn.com/artworks-000190784980-i4qoly-t500x500.jpg",
+         precio: 85000,
+         imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c4c8dee7623f4209b76dfd333a68c812_9366/Camiseta_Titular_Argentina_24_Blanco_IP8400_01_laydown.jpg",
          alt: "Camiseta Argentina"
        },
        {
          id: "",
          nombre: "Pantalón corto Argentina",
-         precio: 6,
-         imagen: "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1371102402-645cff2ca5a62.jpg?crop=0.665xw:1.00xh;0.224xw,0&resize=1200:*",
+         precio: 45000,
+         imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e12f4c5d9a3c47bab70367385042c64e_9366/Shorts_Titular_Blanco_Argentina_24_Blanco_IP8404_01_laydown.jpg",
          alt: "Pantalón corto Argentina"
        },
        {
          id: "",
          nombre: "Campera Argentina",
-         precio: 2,
-         imagen: "https://i0.wp.com/puppis.blog/wp-content/uploads/2022/02/abc-cuidado-de-los-gatos-min.jpg?resize=521%2C346&ssl=1",
+         precio: 100000,
+         imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9bde25472b0149ee9a13e3e6c18f1734_9366/Campera_Presentacion_Argentina_24_Gris_IQ0805_01_laydown.jpg",
          alt: "Campera Argentina"
        }
      ]
