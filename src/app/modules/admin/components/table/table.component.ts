@@ -26,8 +26,28 @@ export class TableComponent {
     imagen: new FormControl('', Validators.required),
     alt: new FormControl('', Validators.required)
   })
-  constructor(public servicioCrud: CrudService){
+  constructor(public servicioCrud: CrudService){}
 
-  }
+  ngOnInit(): void{}
+  async agregarProducto(){
+    if (this.producto.valid){
+      let nuevoProducto:Producto = {
+        idProducto:'',
+        nombre:this.producto.value.nombre!,
+        precio:this.producto.value.precio!,
+        descripcion:this.producto.value.descripcion!,
+        categoria: this.producto.value.categoria!,
+        imagen:this.producto.value.imagen!,
+        alt:this.producto.value.alt!
+      };
+      await this.servicioCrud.crearProducto(nuevoProducto)
+      .then(producto=>{
+        alert("Agrego un nuevo producto exitosamente");
+      })
+      .catch(error => {
+        alert("Ha ocurrido un error al cargar un nuevo producto");
+      })
+    }
+    };
 
 }
