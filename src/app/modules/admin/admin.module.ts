@@ -24,7 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatIconModule
   ],
-  exports:[
+  exports: [
     AdminRoutingModule,
     TableComponent,
     FormsModule,

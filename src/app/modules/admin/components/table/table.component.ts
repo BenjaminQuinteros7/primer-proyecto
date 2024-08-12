@@ -11,48 +11,65 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class TableComponent {
 
   //creamos coleccion local de productos, la cual definimos como array
-  coleccionProductos: Producto [] = [];
+  coleccionProductos: Producto[] = [];
+  productoSeleccionado!: Producto; // "!": significa que puede tomar valores vacíos
+  modalVisibleProducto: boolean = false;
 
   //definimos formulario para los productos
   /* 
   _ Atributos alfanuméricos (string) se inicializan con comillas simples
   _ Atributos numéricos (number) se inicializan con cero ('0')
   */
-  producto= new FormGroup({
+  producto = new FormGroup({
     nombre: new FormControl('', Validators.required),
-    precio: new FormControl (0,Validators.required),
+    precio: new FormControl(0, Validators.required),
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
     imagen: new FormControl('', Validators.required),
     alt: new FormControl('', Validators.required)
   })
-  constructor(public servicioCrud: CrudService){}
+  constructor(public servicioCrud: CrudService) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.servicioCrud.obtenerProductos().subscribe(producto => {
       this.coleccionProductos = producto
     })
   };
 
-  async agregarProducto(){
-    if (this.producto.valid){
-      let nuevoProducto:Producto = {
-        idProducto:'',
-        nombre:this.producto.value.nombre!,
-        precio:this.producto.value.precio!,
-        descripcion:this.producto.value.descripcion!,
+  async agregarProducto() {
+    if (this.producto.valid) {
+      let nuevoProducto: Producto = {
+        idProducto: '',
+        nombre: this.producto.value.nombre!,
+        precio: this.producto.value.precio!,
+        descripcion: this.producto.value.descripcion!,
         categoria: this.producto.value.categoria!,
-        imagen:this.producto.value.imagen!,
-        alt:this.producto.value.alt!
+        imagen: this.producto.value.imagen!,
+        alt: this.producto.value.alt!
       };
       await this.servicioCrud.crearProducto(nuevoProducto)
-      .then(producto=>{
-        alert("Agrego un nuevo producto exitosamente");
+        .then(producto => {
+          alert("Agrego un nuevo producto exitosamente");
+        })
+        .catch(error => {
+          alert("Ha ocurrido un error al cargar un nuevo producto");
+        })
+    }
+  };
+
+  mostrarBorrar(productoSeleccionado: Producto) {
+    this.modalVisibleProducto = true;
+    this.productoSeleccionado = productoSeleccionado;
+
+  };
+
+  borrarProducto() {
+    this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
+      .then(respuesta => {
+        alert("el producto ha sido eliminado con éxito");
       })
       .catch(error => {
-        alert("Ha ocurrido un error al cargar un nuevo producto");
+        alert("no se ha podido eliminar el producto")
       })
-    }
-    };
-
+  };
 }

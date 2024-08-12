@@ -31,18 +31,35 @@ export class CrudService {
       }
     })
   };
-  
+
   //obtener productos
   obtenerProductos() {
-  /* 
-  _ snapshotChanges() => Toma captura del estado de los datos (en ese momento exacto).
-  _ pipe => Tuberías que retornan un nuevo arreglo.
-  _ map => "Mapea" o recorre/lee esa nueva información (esta viene o se transporta por "pipe").
-  _ a => Resguarda la nueva información. 
-  */
-  return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
+    /* 
+    _ snapshotChanges() => Toma captura del estado de los datos (en ese momento exacto).
+    _ pipe => Tuberías que retornan un nuevo arreglo.
+    _ map => "Mapea" o recorre/lee esa nueva información (esta viene o se transporta por
+    "pipe").
+    _ a => Resguarda la nueva información. 
+    */
+    return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
   };
 
   //editar productos
+  modificarProducto(idProducto: string, nuevaData: Producto) {
+    //accedemos a la colleción productos de la base de datos, buscamos el id del producto seleccionado y lo actualizamos con el método "update" enviamdo la nueva información.
+    return this.database.collection("productos").doc(idProducto).update(nuevaData);
+  }
+
   //eliminar productos
+  eliminarProducto(idProducto: string) {
+    return new Promise((resolve, reject) => {
+      try {
+        const respuesta = this.productosCollection.doc(idProducto).delete();
+        resolve(respuesta);
+      }
+      catch (error) {
+        reject(error);
+      }
+    })
+  }
 }
