@@ -26,7 +26,7 @@
 /* ENCAPSULA ESTILOS PARA PANTALLAS MÁS GRANDES -> ej.: computadora, televisor */
 @media (min-width: 700px){
     mat-toolbar{
-        background-color: rgb(98, 98, 255);
+        background-color: #BEA57D;
     }
 
     #menuSecciones{

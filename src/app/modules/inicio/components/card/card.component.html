@@ -1,7 +1,8 @@
+<!--carrousell-->
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img style="width: 200px; height: 550px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfZdvQd9iKIBi_pCOkIa-5sfg4vBx4kssXEg&s" class="d-block w-100" alt="Adidas">
+      <img style="width: 200px; height: 550px;" src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/br_f50_ss24_hp_mglp_clp_mh_banner_launch_d_26cbd38c4f.jpg" class="d-block w-100" alt="Messi-F50">
     </div>
     <div class="carousel-item">
       <img style="width: 200px; height: 550px;" src="https://yt3.googleusercontent.com/s2oMsLbWikTeeHrBH9Mks8Lzt93668UKVXYxaZdlRzsh6LsTOCdO76ocL1Kx3gxI0D2MALMNaMs=s900-c-k-c0x00ffffff-no-rj" class="d-block w-100" alt="AFA">
@@ -30,7 +31,16 @@
             <mat-card-title>{{i.nombre}}</mat-card-title>
             <mat-card-subtitle>Precio: ${{i.precio}}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
+          <span style="display: block; position: relative;">
+          <img style="box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
+        </span>
+        <div data-testid="product-price" class="_product-card-assets__price_19dqy_2162 _price__overlay_15wqs_2145">
+        <div class="gl-price gl-price--horizontal notranslate _price__row_15wqs_2104" data-testid="product-price-original">
+          <div class="gl-price-item notranslate">
+            ${{i.precio}}
+          </div>
+        </div>
+        </div>
           <mat-card-content>
           </mat-card-content>
           <mat-card-actions>

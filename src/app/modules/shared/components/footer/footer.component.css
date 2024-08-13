@@ -1,4 +1,64 @@
+/*footer*/
 #footer{
-    display: flex;
     justify-content: center;
+    display: flex;
+    padding: var(--gl-spacing-0150) 0;
+    flex-direction: column;
+    overflow: hidden;
+}
+/*div*/
+.container{
+    justify-content: center;
+    display: flex;
+}
+/*div*/
+._footer_bottom_1mryh_1 {
+    border-top: 1px solid grey;
+    background-color: black;
+    padding: var(--gl-spacing-0150) 0;
+    display: flex;
+    flex-direction: column;
+}
+/*ul*/
+._legal_menu_1mryh_9 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1010px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+/*li*/
+._legal_menu__item_1mryh_21 {
+    display: inline-block;
+    width: 50%;
+    margin: var(--gl-spacing-0150) 0;
+    padding: 0 var(--gl-spacing-0150);
+    color: grey;
+    font-family: var(--gl-body-font-set-family-functional-2), var(--gl-font-family-fallback);
+    font-size: var(--gl-body-font-set-size-functional-2);
+    font-style: var(--gl-body-font-set-style-functional-2);
+    font-weight: var(--gl-body-font-set-weight-functional-2);
+    letter-spacing: var(--gl-body-font-set-letterspacing-functional-2);
+    line-height: var(--gl-body-font-set-lineheight-functional-2);
+    text-decoration: var(--gl-body-font-set-decoration-functional-2);
+    text-transform: var(--gl-body-font-set-case-functional-2);
+}
+/*div*/
+._colophon_1mryh_63 {
+    max-width: 1010px;
+    align-self: center;
+    padding: var(--gl-spacing-0200) var(--gl-spacing-0150) 0 var(--gl-spacing-0150);
+    font-family: var(--gl-body-font-set-family-functional-2), var(--gl-font-family-fallback);
+    font-size: var(--gl-body-font-set-size-functional-2);
+    font-style: var(--gl-body-font-set-style-functional-2);
+    font-weight: var(--gl-body-font-set-weight-functional-2);
+    letter-spacing: var(--gl-body-font-set-letterspacing-functional-2);
+    line-height: var(--gl-body-font-set-lineheight-functional-2);
+    text-decoration: var(--gl-body-font-set-decoration-functional-2);
+    text-transform: var(--gl-body-font-set-case-functional-2);
+    color: grey;
+    text-align: center;
 }

@@ -30,7 +30,8 @@
       </td>
 
       <td>
-        <button id="btn-edit" title="Eliminar" type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarProducto" (click)="mostrarBorrar(col)">
+        <button id="btn-edit" title="Eliminar" type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+          data-bs-target="#eliminarProducto" (click)="mostrarBorrar(col)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
@@ -83,7 +84,7 @@
         <div class="mb-3">
           <label class="form-label">Seleccione una categoría </label>
           <select class="form-select" class="form-control" formControlName="categoria">
-            <option selected>Elijan una opción</option>
+            <option selected>Elija una opción</option>
             <option value="alimentacion">Pantalones</option>
             <option value="indumentaria">Camperas</option>
             <option value="juguete">Botines</option>
@@ -92,11 +93,12 @@
         </div>
       </div>
 
+        
       <!--Acciones del modal-->
+
       <!-- Modal para agregar un producto -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" (click)="agregarProducto()"
-          data-bs-dismiss="modal">Guardar</button>
+        <button type="button" class="btn btn-outline-success" (click)="agregarProducto()"data-bs-dismiss="modal">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
@@ -109,15 +111,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estás seguro que desea eliminar este producto?</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary">Si</button>
       </div>
     </div>
   </div>

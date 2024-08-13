@@ -4,6 +4,24 @@
     justify-content: center;
 }
 
+._product-card_19dqy_2104 ._product-card-assets__price_19dqy_2162 {
+    position: absolute;
+    bottom: var(--gl-spacing-0000);
+    left: var(--gl-spacing-0000);
+    margin-left: var(--gl-spacing-0050);
+    color: var(--gl-color-brand-p1);
+    transition: var(--gl-motion-duration);
+}
+
+._price__overlay_15wqs_2145>div {
+    background-color: var(--gl-color-brand-p2);
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 2px var(--gl-spacing-0050);
+}
+
+
+
 h1{
     text-align: center;
 }
