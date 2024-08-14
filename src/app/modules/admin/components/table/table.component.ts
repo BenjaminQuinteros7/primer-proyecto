@@ -60,7 +60,6 @@ export class TableComponent {
   mostrarBorrar(productoSeleccionado: Producto) {
     this.modalVisibleProducto = true;
     this.productoSeleccionado = productoSeleccionado;
-
   };
 
   borrarProducto() {

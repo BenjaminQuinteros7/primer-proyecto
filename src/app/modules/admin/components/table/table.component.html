@@ -93,12 +93,13 @@
         </div>
       </div>
 
-        
+
       <!--Acciones del modal-->
 
       <!-- Modal para agregar un producto -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" (click)="agregarProducto()"data-bs-dismiss="modal">Guardar</button>
+        <button type="button" class="btn btn-outline-success" (click)="agregarProducto()"
+          data-bs-dismiss="modal">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
@@ -107,7 +108,8 @@
 
 
 <!-- Modal para eliminar un producto -->
-<div class="modal fade" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" *ngIf="modalVisibleProducto" id="eliminarProducto" tabindex="-1"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -115,11 +117,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        {{productoSeleccionado.nombre}}
+        <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}">
       </div>
+      
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-        <button type="button" class="btn btn-primary">Si</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+          (click)="borrarProducto()">Eliminar</button>
+          
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
