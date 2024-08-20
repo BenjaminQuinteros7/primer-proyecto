@@ -50,9 +50,13 @@ export class TableComponent {
       await this.servicioCrud.crearProducto(nuevoProducto)
         .then(producto => {
           alert("Agrego un nuevo producto exitosamente");
+          //Resetea el formulario y las casillas quedan vacías
+          this.producto.reset();
         })
         .catch(error => {
           alert("Ha ocurrido un error al cargar un nuevo producto");
+          //Resetea el formulario y las casillas quedan vacías
+          this.producto.reset();
         })
     }
   };
@@ -71,4 +75,42 @@ export class TableComponent {
         alert("no se ha podido eliminar el producto")
       })
   };
+
+  //Editar Productos
+  //se envía y se llama al momento que tocamos botón "editar" de la tabla
+  mostrarEditar(productoSeleccionado: Producto) {
+    this.productoSeleccionado = productoSeleccionado
+    /* Toma los valores del producto seleccionado y los va a autocompletar en el formulario del modal (menos el "ID") */
+    this.producto.setValue({
+      nombre: productoSeleccionado.nombre,
+      precio: productoSeleccionado.precio,
+      descripcion: productoSeleccionado.descripcion,
+      categoria: productoSeleccionado.categoria,
+      imagen: productoSeleccionado.imagen,
+      alt: productoSeleccionado.alt
+    })
+  }
+
+  //vincula a botón "editarProducto" del modal de "editar"
+  editarProductos() {
+    let datos: Producto = {
+      //solo idProducto no se modifica por el usuario
+      idProducto: this.productoSeleccionado.idProducto,
+      /* los demás atributos reciben nueva información/valor desde el formulario */
+      nombre: this.producto.value.nombre!,
+      precio: this.producto.value.precio!,
+      descripcion: this.producto.value.descripcion!,
+      categoria: this.producto.value.categoria!,
+      imagen: this.producto.value.imagen!,
+      alt: this.producto.value.alt!,
+    }
+
+    //enviamos al método el id del producto seleccionado y los datos actualizados
+    this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos).then(producto => {
+      alert("el producto se ha modificado con éxito");
+    })
+      .catch(error => {
+        alert("Hubo un problema al modificar el producto");
+      })
+  }
 }
