@@ -1,8 +1,29 @@
 <div class="container">
     <div class="row">
-        <h1>Productos</h1>
-        <div class="col">
-            <app-card></app-card>
+        <h1 style="display: flex; justify-content: center;">Productos</h1>
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img style="width:max-content; height: 500px;" src="https://ultrafutbolchile.com/cdn/shop/files/11_b805bd80-167b-47d5-b4f1-9db4aa676ac2.jpg?v=1712370198&width=713" class="d-block w-100" alt="camisetas">
+                </div>
+                <div class="carousel-item" *ngFor="let producto of productosCarrusel">
+                    <img src="{{producto.imagen}}" class="d-block w-100" alt="{{producto.alt}}">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+
+        <div class="col">
+            <app-card (productoAgregado)="productoAnadido($event)" [productoReciente]="product"></app-card>
+        </div>
+
     </div>
 </div>
