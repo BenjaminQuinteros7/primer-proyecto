@@ -102,15 +102,17 @@ export class TableComponent {
       descripcion: this.producto.value.descripcion!,
       categoria: this.producto.value.categoria!,
       imagen: this.producto.value.imagen!,
-      alt: this.producto.value.alt!,
+      alt: this.producto.value.alt!
     }
 
     //enviamos al método el id del producto seleccionado y los datos actualizados
     this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos).then(producto => {
-      alert("el producto se ha modificado con éxito");
+      alert("el producto se ha modificado con éxito")
+      this.producto.reset()
     })
       .catch(error => {
-        alert("Hubo un problema al modificar el producto");
+        alert("Hubo un problema al modificar el producto: \n" + error)
+        this.producto.reset()
       })
   }
 }

@@ -21,7 +21,7 @@ export class ProductoComponent {
 
       Swal.fire({
         title: 'muy bien',
-        text: 'bien se añado tu producto con exito',
+        text: 'bien se añadió tu producto con éxito',
         icon: 'info'
       })
     }
