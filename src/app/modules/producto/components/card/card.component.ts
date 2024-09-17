@@ -25,7 +25,7 @@ export class CardComponent {
   constructor(public servicioCrud: CrudService) { }
 
   ngOnInit(): void {
-    this.servicioCrud.obtenerProductos().subscribe(producto => {
+    this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
     })
   }

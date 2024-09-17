@@ -45,7 +45,7 @@
   Agregar un nuevo producto
 </button>
 
-<!-- Modal para agregar producto -->
+<!-- Modal para agregar nuevo producto -->
 <div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -64,7 +64,12 @@
         <!--imagen-->
         <div class="mb-3">
           <label class="form-label">ingrese una imagen </label>
-          <input type="text" class="form-control" formControlName="imagen" placeholder="ingrese vinculo de una imagen">
+          <!--
+          _ type file para archivos
+          _ accept= "imagen/*" acepta todo tipo de extensiones (JPG, PNG, JPEG, GIF)
+          _ (change)="cargarImagen($event)" ejecuta el evento de cargarImagen que definimos en el table.ts
+          -->
+          <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
         </div>
         <!--alt-->
         <div class="mb-3">
@@ -129,7 +134,7 @@
         <!--imagen-->
         <div class="mb-3">
           <label class="form-label">ingrese una imagen </label>
-          <input type="text" class="form-control" formControlName="imagen" placeholder="{{productoEdit.imagen}}">
+          <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
         </div>
         <!--alt-->
         <div class="mb-3">
@@ -165,7 +170,7 @@
 
       <!-- Modal para editar un producto -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" (click)="editarProductos()"
+        <button type="button" class="btn btn-outline-success" (click)="editarProducto()"
           data-bs-dismiss="modal">Guardar cambios</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
       </div>

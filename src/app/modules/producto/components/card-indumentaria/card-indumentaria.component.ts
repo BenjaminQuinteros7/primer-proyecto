@@ -17,7 +17,7 @@ export class CardIndumentariaComponent {
   constructor(public servicioCrud: CrudService) { }
   ngOnInit(): void {
     //accedemos a método 'obtenerProductos'
-    this.servicioCrud.obtenerProductos().subscribe(producto => {
+    this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
       //mostrará la colección de esa categoría hasta el momento
       this.mostrarProductosAlimentacion()
