@@ -42,4 +42,8 @@ export class CardComponent {
     this.productoAgregado.emit(info); //enviamos información del producto agregado
     this.compraVisible = true;
   }
+
+
+
+  
 }

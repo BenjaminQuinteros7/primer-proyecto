@@ -12,18 +12,18 @@
     </div>
   </div>
   <!--card para mostrar todos los productos que el admin ingrese a la base de datos-->
-    <div class="contenido" *ngFor="let producto of coleccionProductos">
-      <div class="card" style="width: 18rem;">
-        <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
+  <div class="contenido" *ngFor="let producto of coleccionProductos">
+    <div class="card" style="width: 18rem;">
+      <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
 
-        <div class="card-body">
-          <h5 class="card-title">{{producto.descripcion}}</h5>
-          <p class="card-text">Precio: ${{producto.precio}}</p>
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="verMas">Ver
-            Más</button>
-        </div>
+      <div class="card-body">
+        <h5 class="card-title">{{producto.descripcion}}</h5>
+        <p class="card-text">Precio: ${{producto.precio}}</p>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="verMas">Ver
+          Más</button>
       </div>
     </div>
+  </div>
 </div>
 
 
