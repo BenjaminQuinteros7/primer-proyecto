@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -22,11 +22,11 @@
 
 
 
-h1{
+h1 {
     text-align: center;
 }
 
-.contenido{
+.contenido {
     width: 200px;
     display: inline-block;
     padding: 15px;
@@ -34,14 +34,10 @@ h1{
     margin: 10px;
 }
 
-p{
+p {
     padding: 5px;
 }
 
-@media (min-width: 300px) and (max-width: 700px){
-    
-}
+@media (min-width: 200px) and (max-width: 600px) {}
 
-@media (min-width: 700px){
-
-}
+@media (min-width: 600px) {}

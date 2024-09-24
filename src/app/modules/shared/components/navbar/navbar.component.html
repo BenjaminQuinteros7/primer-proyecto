@@ -9,9 +9,11 @@
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
   </mat-menu>
 
+  <!--
   <button mat-button routerLink="/inicio">
     <span>Indumentaria Deportiva</span>
   </button>
+  -->
 
   <!-- Se van a mostrar cuando la pantalla sea mayor a 700px -->
   <!-- Botón para la vista de Inicio -->
@@ -27,6 +29,11 @@
   </mat-menu>
 
   <span class="example-spacer"></span>
+
+  <!--Buscador-->
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+  </form>
 
   <!-- Inicio de sesión y el Registro de un nuevo usuario -->
   <button mat-icon-button [matMenuTriggerFor]="usuario" title="Registrarse/Iniciar-Sesión"><mat-icon>person</mat-icon></button>
