@@ -1,0 +1,29 @@
+.table {
+    border-collapse: collapse;
+    border: 10px solid transparent;
+    animation: borderAnimation 3s linear infinite;
+}
+
+.animated-table th,
+.animated-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #007BFF;
+    }
+    25% {
+        border-color: #FF5733;
+    }
+    50% {
+        border-color: #28A745;
+    }
+    75% {
+        border-color: #FFC107;
+    }
+    100% {
+        border-color: #007BFF;
+    }
+}

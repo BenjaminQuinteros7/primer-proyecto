@@ -1,8 +1,9 @@
 <div class="container">
     <div class="row">
+        <div class="person">
         <h1>Inicia Sesión</h1>
-
         <i class="material-icons" style="font-size: 200px;">person</i>
+        </div>
 
         <mat-form-field appearance="fill">
             <mat-label>Ingrese su email:</mat-label>
@@ -11,13 +12,25 @@
 
         <mat-form-field>
             <mat-label>Ingrese su contraseña:</mat-label>
-            <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6"
+                required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
         </mat-form-field>
 
-        <button class="boton" mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesión</button>
+        <!--
+        <!-checkbox->
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"
+            style="width: 20px; height: 35px;">
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" required>
+            <label class="btn btn-outline-primary" for="btncheck1"><mat-icon>check</mat-icon></label>
+            <p>He leído y acepto los términos y condiciones.</p>
+        </div> -->
+        <span class="example-spacer"></span>
+
+        <button class="boton" mat-raised-button (click)="iniciarSesion()">Iniciar Sesión</button>
     </div>
 </div>

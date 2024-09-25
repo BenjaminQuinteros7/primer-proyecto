@@ -2,16 +2,11 @@
     flex: 1 1 auto;
 }
 
-/*
-    1) Santi: Aplica estilos generales según margen o ancho de una pantalla
-    2) Mili: Permiten aplicar estilos diferentes según el tamaño o resolución de una pantalla (px)
-    3) Cris: Reglas condicionales de estilos si aplican cierta condición
-*/
 
 /* CORRESPONDEN A PANTALLAS MÁS PEQUEÑAS -> ej.: celulares */
 @media (min-width: 300px) and (max-width: 700px){
     mat-toolbar{
-        background-color: pink;
+        background-color: #BEA57D;
     }
 
     #menuInicio{

@@ -22,7 +22,7 @@ export class CardComponent {
        },
        {
          id: "",
-         nombre: "Pantalón corto Argentina",
+         nombre: "Pantalón Argentina",
          precio: 45000,
          imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e12f4c5d9a3c47bab70367385042c64e_9366/Shorts_Titular_Blanco_Argentina_24_Blanco_IP8404_01_laydown.jpg",
          alt: "Pantalón corto Argentina"

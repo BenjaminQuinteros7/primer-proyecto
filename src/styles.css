@@ -23,11 +23,23 @@ body{
     color: black;
 }
 
+* {
+    font-family: 'Montserrat', sans-serif;
 
+}
 
+h1, h2, h3 {
+    font-weight: 800; /* Negrita para encabezados */
+}
+
+p {
+    font-weight: 500; /* Normal para párrafos */
+}
+
+/*
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+*/
 @media (min-width: 200px) and (max-width: 600px) {}
 
 @media (min-width: 600px) {}

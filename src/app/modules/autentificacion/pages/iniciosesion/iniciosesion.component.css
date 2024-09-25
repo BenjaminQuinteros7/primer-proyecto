@@ -8,4 +8,38 @@
 .boton{
     width: 120px;
     margin: auto;
+    background-color: #007bff;
 }
+
+.person {
+    background-color: #BEA57D;
+    display: flex;
+    justify-content: center;
+
+
+    align-items: center;
+    height: 100vh;
+    perspective: 500px;
+}
+
+.material-icons {
+
+    transition: transform 0.5s;
+
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/*
+.material-icons:hover {
+    transform: rotateY(360deg);
+}
+    */
