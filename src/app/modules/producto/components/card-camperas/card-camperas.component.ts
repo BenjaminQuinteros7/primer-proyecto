@@ -3,14 +3,14 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
 import { Producto } from 'src/app/models/producto';
 
 @Component({
-  selector: 'app-card-indumentaria',
-  templateUrl: './card-indumentaria.component.html',
-  styleUrls: ['./card-indumentaria.component.css']
+  selector: 'app-card-camperas',
+  templateUrl: './card-camperas.component.html',
+  styleUrls: ['./card-camperas.component.css']
 })
-export class CardIndumentariaComponent {
+export class CardCamperasComponent {
 
   coleccionProductos: Producto[] = [];
-  coleccionAlimentacion: Producto[] = [];
+  coleccionProducto: Producto[] = [];
   productoSeleccionado!: Producto;
   modalVisible: boolean = false;
 
@@ -20,18 +20,18 @@ export class CardIndumentariaComponent {
     this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
       //mostrará la colección de esa categoría hasta el momento
-      this.mostrarProductosAlimentacion()
+      this.mostrarProductosProducto()
     })
   }
 
 //función para filtrar los productos de tipo "alimentación"
-  mostrarProductosAlimentacion() {
+  mostrarProductosProducto() {
     //iteramos colección de productos con un "forEach"
     this.coleccionProductos.forEach(producto => {
       //si es del tipo "alimentacion" => condicional
-      if (producto.categoria === "indumentaria") {
+      if (producto.categoria === "producto") {
         //lo sube/guarda en la colección de productos de tipo "alimentación"
-        this.coleccionAlimentacion.push(producto);
+        this.coleccionProducto.push(producto);
       }
     })
   }

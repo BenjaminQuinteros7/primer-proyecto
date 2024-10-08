@@ -11,6 +11,9 @@ import { JugueteComponent } from './pages/juguete/juguete.component';
 //componentes locales
 import { CardComponent } from './components/card/card.component';
 import { CardIndumentariaComponent } from './components/card-indumentaria/card-indumentaria.component';
+import { CardPantalonesComponent } from './components/card-pantalones/card-pantalones.component';
+import { CardBotinesComponent } from './components/card-botines/card-botines.component';
+import { CardCamperasComponent } from './components/card-camperas/card-camperas.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { CardIndumentariaComponent } from './components/card-indumentaria/card-i
     IndumentariaComponent,
     JugueteComponent,
     CardComponent,
-    CardIndumentariaComponent
+    CardIndumentariaComponent,
+    CardPantalonesComponent,
+    CardBotinesComponent,
+    CardCamperasComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +38,8 @@ import { CardIndumentariaComponent } from './components/card-indumentaria/card-i
     IndumentariaComponent,
     JugueteComponent,
     CardComponent,
-    CardIndumentariaComponent
+    CardIndumentariaComponent,
+    CardPantalonesComponent
   ]
 })
 export class ProductoModule { }

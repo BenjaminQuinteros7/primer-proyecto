@@ -7,21 +7,21 @@
       <th scope="col">Nombre</th>
       <th scope="col">Precio</th>
       <th scope="col">Descripción</th>
-      <th scope="col">Categoría</th>
+      <!--<th scope="col">Categoría</th>-->
       <th scope="col">Acciones</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let col of coleccionProductos">
-      <th scope="row">1</th>
+      <th scope="row">{{col.alt}}</th>
       <td>
         <img style="height: 200px; width: 200px;" src="{{col.imagen}}" alt="{{col.alt}}">
       </td>
       <td>{{col.nombre}}</td>
-      <td>{{col.precio}}</td>
+      <td>${{col.precio}}</td>
       <td>{{col.descripcion}}</td>
-      <td>{{col.categoria}}</td>
+      <!--<td>{{col.categoria}}</td>-->
 
       <!--acciones-->
       <td>
@@ -178,6 +178,8 @@
     </div>
   </div>
 </div>
+
+
 
 <!-- Modal para eliminar un producto -->
 <div class="modal fade" *ngIf="modalVisibleProducto" id="eliminarProducto" tabindex="-1"

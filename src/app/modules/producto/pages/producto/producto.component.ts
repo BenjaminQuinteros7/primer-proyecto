@@ -6,7 +6,9 @@ import Swal from 'sweetalert2';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
 })
-export class ProductoComponent {
+
+export class ProductoComponent {}
+/*
   //string que modificará el valor de @Input en el componente hijo
   product: string = '';
   //colección de productos añadidos a la lista
@@ -34,3 +36,4 @@ export class ProductoComponent {
     }
   }
 }
+*/
