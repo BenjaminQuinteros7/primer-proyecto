@@ -11,14 +11,11 @@
   <mat-menu #seccion="matMenu"> 
     <button mat-menu-item routerLink="/inicio">Inicio</button>
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button> 
-    
+    <button mat-menu-item routerLink="/admin">Admin</button>
   </mat-menu>
-  
-  <!--
-  <button mat-button routerLink="/inicio">
-    <span>Indumentaria Deportiva</span>
-  </button>
-  -->
+
+  <span>ATLETHE</span>
+
 
   <!-- Se van a mostrar cuando la pantalla sea mayor a 700px -->
   <!-- Botón para la vista de Inicio -->
@@ -33,6 +30,8 @@
     <button mat-menu-item routerLink="/indumentaria">Camperas</button>
     <button mat-menu-item routerLink="/juguetes">Botines</button>
   </mat-menu>
+
+  <button id="menuAdmin" mat-button routerLink="/admin">Admin</button>
 
   <span class="example-spacer"></span>
 

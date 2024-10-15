@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class IniciosesionComponent {
   hide = true;
-  // ############################# LOCAL
+  // LOCAL
   // Definimos colección local de usuarios
   /*
   public coleccionUsuariosLocales: Usuario[];
@@ -46,7 +46,7 @@ export class IniciosesionComponent {
       }
     ]
   }*/
-  // ############################# FIN LOCAL
+  // FIN LOCAL
 
   constructor(
     public servicioAuth: AuthService,
@@ -54,7 +54,7 @@ export class IniciosesionComponent {
     public servicioRutas: Router
   ) { }
 
-  // ############################# INGRESADO
+  // INGRESADO
   // Definimos la interfaz de usuario
   usuarios: Usuario = {
     uid: '',
@@ -154,7 +154,16 @@ export class IniciosesionComponent {
             icon: "success"
           });
 
-          this.servicioRutas.navigate(['/inicio']);
+          //almacenamos y enviamos por parámetro el rol de los datos de usuarios obtenidos
+          this.servicioAuth.setUsuarioRol(usuarioData.rol)
+
+          if (usuarioData.rol === "admin") {
+            console.log("inicio de administrador");
+            this.servicioRutas.navigate(['/admin']);
+          } else {
+            console.log("inicio de visitante");
+            this.servicioRutas.navigate(['/inicio']);
+          }
         })
         .catch(err => {
           Swal.fire({
@@ -165,7 +174,7 @@ export class IniciosesionComponent {
 
           this.limpiarInputs();
         })
-    } catch(error){
+    } catch (error) {
       this.limpiarInputs();
     }
   }
@@ -238,7 +247,7 @@ export class IniciosesionComponent {
       }
     ]
   }*/
-  // ############################# FIN LOCAL
+// ############################# FIN LOCAL
 /*
   constructor(
     public servicioAuth: AuthService,
