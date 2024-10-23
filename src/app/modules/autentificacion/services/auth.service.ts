@@ -18,30 +18,30 @@ export class AuthService {
 
   // Referenciar Auth de Firebase en el servicio y ServicioFirestore
   constructor(
-    private auth: AngularFireAuth, 
+    private auth: AngularFireAuth,
     private servicioFirestore: AngularFirestore
   ) { }
 
   // FUNCIÓN PARA REGISTRO
-  registrar(email: string, password: string){
+  registrar(email: string, password: any) {
     // retorna el valor que es creado con el método "createEmail..."
     return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
   // FUNCIÓN PARA INICIO DE SESIÓN
-  iniciarSesion(email: string, password: string){
+  iniciarSesion(email: string, password: any) {
     // validar la información del usuario -> saber si existe en la colección
     return this.auth.signInWithEmailAndPassword(email, password);
   }
 
   // FUNCIÓN PARA CERRAR SESIÓN
-  cerrarSesion(){
+  cerrarSesion() {
     // devuelve una promesa vacía -> quita token
     return this.auth.signOut();
   }
 
   // FUNCIÓN PARA TOMAR EL UID
-  async obtenerUid(){
+  async obtenerUid() {
     // Nos va a generar una promesa y la constante la va a capturar
     const user = await this.auth.currentUser;
 
@@ -49,14 +49,14 @@ export class AuthService {
       Si el usuario no respeta la estructura de la interfaz /
       Si tuvo problemas para el registro -> ej.: mal internet
     */
-    if(user == null){
+    if (user == null) {
       return null;
     } else {
       return user.uid;
     }
   }
 
-  obtenerUsuario(email: string){
+  obtenerUsuario(email: string) {
     /**
      * Retornamos del servicioFirestore la colección de 'usuarios', buscamos una referencia en los email registrados
      * y los comparamos con los que ingrese el usuario al iniciar sesión, y lo obtiene con el '.get()'
@@ -67,16 +67,16 @@ export class AuthService {
 
   //función para obtener el rol del usuario
   //uid es el identificador del usuario
-  obtenerRol(uid: string): Observable<string | null>{
+  obtenerRol(uid: string): Observable<string | null> {
     /* accedemos a colección de usuarios, buscando por uid, obteniendo cambios en valores. Al enviar info. por tubería. "mapeamos" la colección, obtenemos un usuario específico y buscamos su atributo "rol" */
-    return this.servicioFirestore.collection("usuarios").doc(uid).valueChanges().pipe(map((usuario:any)=> usuario ? usuario.rol: null));
+    return this.servicioFirestore.collection("usuarios").doc(uid).valueChanges().pipe(map((usuario: any) => usuario ? usuario.rol : null));
   }
   //envíar el rol obtenido
-  setUsuarioRol(rol:string){
+  setUsuarioRol(rol: string) {
     this.rolUsuario = rol;
   }
   //obtener el rol y asignarlo al rol de la variable local
-  getUsuarioRol(): string | null{
+  getUsuarioRol(): string | null {
     return this.rolUsuario;
   }
 }
