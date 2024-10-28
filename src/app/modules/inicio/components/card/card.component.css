@@ -61,6 +61,22 @@ p {
     padding: 5px;
 }
 
+#nosotros{
+    margin: auto;
+}
+  
+@media (max-width: 768px) {
+    #nosotros {
+      font-size: 14px; /* Ajuste para pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #nosotros {
+      font-size: 10px; /* Ajuste para móviles */
+    }
+  }
+
 
 
 @media (min-width: 200px) and (max-width: 600px) {}
