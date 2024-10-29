@@ -1,13 +1,20 @@
 <!--card para mostrar todos los productos que el admin ingrese a la base de datos-->
-<div class="contenido" *ngFor="let producto of coleccionAlimentacion">
-    <div class="card" style="width: 18rem;">
-        <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
-
-        <div class="card-body">
-            <h5 class="card-title">{{producto.imagen}}</h5>
-            <p class="card-text">precio: ${{producto.precio}}</p>
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="verMas">Ver
-                Más</button>
+<div class="row g-2">
+    <div class="contenido col-4" *ngFor="let producto of coleccionAlimentacion">
+        <div class="p-4 " style="width: 18rem;">
+            <img style="width:200px;" src="{{producto.imagen}}" alt="{{producto.alt}}">
+            <div class="card-body">
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <p class="card-text">
+                    {{producto.descripcion}}
+                    
+                </p>
+                <p class="card-text">
+                    ${{producto.precio}}
+                </p>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="verMas"
+                    (click)="mostrarVer(producto)">Ver Más</button>
+            </div>
         </div>
     </div>
 </div>

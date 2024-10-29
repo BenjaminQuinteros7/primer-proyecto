@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 /*div*/
-.container{
+.container-footer{
     justify-content: center;
     display: flex;
 }
