@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="person">
-        <h1>Registrate</h1>
-        <i class="material-icons" style="font-size: 200px;">person</i>
+            <h1>Registrate</h1>
+            <i class="material-icons" style="font-size: 200px;">person</i>
         </div>
         <!-- Nombre de usuario -->
         <mat-form-field appearance="fill">
@@ -27,9 +27,11 @@
         <!-- Contraseña de usuario -->
         <mat-form-field>
             <mat-label>Ingrese su contraseña:</mat-label>
-            <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6"
+                required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
         </mat-form-field>
@@ -42,9 +44,10 @@
          <label class="btn btn-outline-primary" for="btncheck1"><mat-icon>check</mat-icon></label>
          <p>He leído y acepto los términos y condiciones.</p>
      </div>-->
-     <span class="example-spacer"></span>
+        <span class="example-spacer"></span>
 
         <!-- Botón para ENVIAR la información a la Base de Datos-->
-        <button class="boton" mat-raised-button  (click)="registrar()">Registrar</button>
+        <button class="boton" (click)="registrar()" style="color: black;">Registrar</button>
+        <!-- <button class="boton" mat-raised-button  (click)="registrar()">Registrar</button> -->
     </div>
 </div>

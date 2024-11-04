@@ -40,4 +40,8 @@ export class CardIndumentariaComponent {
     this.modalVisible=true;
     this.productoSeleccionado = info;
   }
+
+  productoAgregado(){
+    alert("El producto ha sido añadido al carrito")
+  }
 }
