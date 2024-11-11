@@ -8,8 +8,8 @@
       <th scope="col">Precio</th>
       <th scope="col">Descripción</th>
       <!--<th scope="col">Categoría</th>-->
+      <th scope="col">Stock</th>
       <th scope="col">Acciones</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +22,7 @@
       <td>${{col.precio}}</td>
       <td>{{col.descripcion}}</td>
       <!--<td>{{col.categoria}}</td>-->
+      <td>{{col.stock}}</td>
 
       <!--acciones-->
       <td>
@@ -142,6 +143,12 @@
           <label class="form-label">ingrese texto alternativo </label>
           <input type="text" class="form-control" formControlName="alt" placeholder="{{productoEdit.alt}}">
         </div>
+        <!--stock-->
+        <div class="mb-3">
+          <label class="form-label">Ingrese su stock disponible:</label>
+          <input type="number" class="form-control" formControlName="stock" placeholder="{{productoEdit.stock}}">
+        </div>
+        
         <!--descripción-->
         <div class="mb-3">
           <label class="form-label">ingrese una descripción </label>
