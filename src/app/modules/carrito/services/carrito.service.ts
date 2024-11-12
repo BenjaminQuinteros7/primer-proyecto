@@ -91,7 +91,7 @@ export class CarritoService {
       title:'¡Oh no!',
       text: '¡Ha ocurrido un error: \n'+error,
       icon:'error'
-    });
+    }); 
     }
   }
 

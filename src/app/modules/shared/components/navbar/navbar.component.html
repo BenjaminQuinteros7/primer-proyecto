@@ -50,13 +50,12 @@
     <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
 
-  <!--
-  <!- Carrito ->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
-    title="Comprar">
+
+  <!-- Carrito -->
+  <button mat-icon-button class="example-icon favorite-icon" routerLink="/carrito" title="Comprar">
     <mat-icon>shopping_cart</mat-icon>
   </button>
--->
+
 
   <!--label para modo oscuro-->
   <label for="toggle" id="label_toggle" title="Cambiar Fondo"><i class="fa-solid fa-moon"></i></label>

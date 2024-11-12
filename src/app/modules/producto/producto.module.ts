@@ -15,6 +15,8 @@ import { CardPantalonesComponent } from './components/card-pantalones/card-panta
 import { CardBotinesComponent } from './components/card-botines/card-botines.component';
 import { CardCamperasComponent } from './components/card-camperas/card-camperas.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { CardCamperasComponent } from './components/card-camperas/card-camperas.
   imports: [
     CommonModule,
     ProductoRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   exports:[
     ProductoComponent,
